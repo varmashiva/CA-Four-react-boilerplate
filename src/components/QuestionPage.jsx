@@ -1,9 +1,9 @@
-// importing files
+// importing React's useState and useEffect hooks, an array of questions, and the useNavigate hook from React Router DOM,
 import { useState, useEffect } from 'react';
 import questions from '../question';
 import { useNavigate } from 'react-router-dom';
 
-// using useState for setscore
+//functional React component QuestionPage, initializing state variables for the current question index, the current question object, the score and background color, respectively.
 const QuestionPage = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const currentQuestion = questions[currentQuestionIndex];
@@ -12,7 +12,7 @@ const QuestionPage = () => {
   const [highlight, setHighlight] = useState('black');
   const [backgroundColor, setBackgroundColor] = useState(true);
 
-  // changing banground colour after user clicks
+  // cuseEffect hook invokes the Modes function, toggling the background color between #e1d9cc and black and updating the backgroundColor state accordingly.
   useEffect(() => {
     Modes();
   }, []);
@@ -20,13 +20,12 @@ const QuestionPage = () => {
     setBackgroundColor(!backgroundColor);
     if (backgroundColor) {
       document.body.style.backgroundColor = '#e1d9cc';
-      //
     } else {
       document.body.style.backgroundColor = 'black';
     }
   };
 
-  // creating text highlight button after user click highlight and remove the heighlight
+  // These functions handle highlighting by setting the highlight color to red and black respectively.
   const handleHighlight = () => {
     setHighlight('red');
   };
@@ -35,7 +34,7 @@ const QuestionPage = () => {
     setHighlight('black');
   };
 
-  // changing score and navigating to result page
+  // This function handles updating the score and moving to the next question or displaying the score page.
   const handleCorrectOrWrong = (TrueFalse) => {
     console.log(TrueFalse);
 

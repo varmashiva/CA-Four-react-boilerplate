@@ -1,8 +1,8 @@
-// importing files
+// importing React's useState and useEffect hooks
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-  // changing banground colour after user clicks
+  //   // cuseEffect hook invokes the Modes function, toggling the background color between #e1d9cc and black and updating the backgroundColor state accordingly.
 const Result = () => {
   const { id } = useParams();
   const [backgroundColor, setBackgroundColor] = useState(true);
