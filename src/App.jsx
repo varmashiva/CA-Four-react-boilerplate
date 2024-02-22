@@ -1,3 +1,4 @@
+// importing files
 import React from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
@@ -6,6 +7,7 @@ import QuestionPage from './components/QuestionPage';
 const App = () => {
   return (
     <div>
+  {/* using routes */}
       <Routes>
         <Route path="/" element={<QuestionPage />} />
         <Route path="/result/:id" element={<Result />} />

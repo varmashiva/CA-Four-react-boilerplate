@@ -1,3 +1,4 @@
+// importing files
 import { useState, useEffect } from 'react';
 import questions from '../question';
 import { useNavigate } from 'react-router-dom';
@@ -34,15 +35,17 @@ const QuestionPage = () => {
   const handleCorrectOrWrong = (TrueFalse) => {
     console.log(TrueFalse);
 
-    if (currentQuestionIndex <= 3) {
+    if (currentQuestionIndex < 4 ) {
       if (TrueFalse == true) {
         setScore((prev) => prev + 1);
       }
+    
       setCurrentQuestionIndex((prev) => prev + 1);
       console.log('this', currentQuestionIndex);
-    } else {
+    } 
+    else {
       console.log('Next page to show score');
-      return nav(`/result/${score}`);
+      return nav(`/result/${score + 1 }`);
     }
   };
 

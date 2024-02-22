@@ -1,4 +1,3 @@
-import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 const Result = () => {
@@ -16,8 +15,7 @@ const Result = () => {
       document.body.style.backgroundColor = 'black';
     }
   };
-
-  console.log(id);
+  console.log(id)
   return (
     <div>
       <div className="heading">
