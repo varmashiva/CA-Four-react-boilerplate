@@ -2,10 +2,10 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
-  //   // cuseEffect hook invokes the Modes function, toggling the background color between #e1d9cc and black and updating the backgroundColor state accordingly.
 const Result = () => {
   const { id } = useParams();
   const [backgroundColor, setBackgroundColor] = useState(true);
+  //   // cuseEffect hook invokes the Modes function, toggling the background color between #e1d9cc and black and updating the backgroundColor state accordingly.
   useEffect(() => {
     Modes();
   }, []);
