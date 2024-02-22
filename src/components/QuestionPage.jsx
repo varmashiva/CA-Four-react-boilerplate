@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import questions from '../question';
 import { useNavigate } from 'react-router-dom';
 
+// using useState for setscore
 const QuestionPage = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const currentQuestion = questions[currentQuestionIndex];
@@ -11,6 +12,7 @@ const QuestionPage = () => {
   const [highlight, setHighlight] = useState('black');
   const [backgroundColor, setBackgroundColor] = useState(true);
 
+  // changing banground colour after user clicks
   useEffect(() => {
     Modes();
   }, []);
@@ -24,6 +26,7 @@ const QuestionPage = () => {
     }
   };
 
+  // creating text highlight button after user click highlight and remove the heighlight
   const handleHighlight = () => {
     setHighlight('red');
   };
@@ -32,6 +35,7 @@ const QuestionPage = () => {
     setHighlight('black');
   };
 
+  // changing score and navigating to result page
   const handleCorrectOrWrong = (TrueFalse) => {
     console.log(TrueFalse);
 
@@ -48,7 +52,7 @@ const QuestionPage = () => {
       return nav(`/result/${score + 1 }`);
     }
   };
-
+// creating body (HTML)
   return (
     <div>
       <div className="heading">

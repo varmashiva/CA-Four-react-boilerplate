@@ -1,5 +1,8 @@
+// importing files
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+
+  // changing banground colour after user clicks
 const Result = () => {
   const { id } = useParams();
   const [backgroundColor, setBackgroundColor] = useState(true);
@@ -16,6 +19,7 @@ const Result = () => {
     }
   };
   console.log(id)
+  // // creating body (HTML)
   return (
     <div>
       <div className="heading">
