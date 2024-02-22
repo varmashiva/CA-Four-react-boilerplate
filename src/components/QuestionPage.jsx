@@ -38,24 +38,23 @@ const QuestionPage = () => {
   const handleCorrectOrWrong = (TrueFalse) => {
     console.log(TrueFalse);
 
-    if (currentQuestionIndex < 4 ) {
+    if (currentQuestionIndex < 4) {
       if (TrueFalse == true) {
         setScore((prev) => prev + 1);
       }
-    
+
       setCurrentQuestionIndex((prev) => prev + 1);
       console.log('this', currentQuestionIndex);
-    } 
-    else {
+    } else {
       console.log('Next page to show score');
-      return nav(`/result/${score + 1 }`);
+      return nav(`/result/${TrueFalse ? score + 1 : score}`);
     }
   };
-// creating body (HTML)
+  // creating body (HTML)
   return (
     <div>
       <div className="heading">
-        <h1 className='kalvium'>Kalvium</h1>
+        <h1 className="kalvium">Kalvium</h1>
         <button className="baground_button" onClick={Modes}>
           {backgroundColor == true ? 'Light' : 'Dark'}
         </button>
@@ -66,7 +65,9 @@ const QuestionPage = () => {
         </center>
         <center>
           <div className="quiz">
-            <h2 style={{ color: highlight }} className='questions'>{currentQuestion.text}</h2>
+            <h2 style={{ color: highlight }} className="questions">
+              {currentQuestion.text}
+            </h2>
             <div className="options-div">
               <div
                 onClick={() =>
